@@ -117,16 +117,16 @@
             <version>5.2.6.RELEASE</version>
         </dependency>
 
-        <!-- <dependency>-->
-        <!-- <groupId>org.springframework</groupId>-->
-        <!-- <artifactId>spring-tx</artifactId>-->
-        <!-- <version>5.2.6.RELEASE</version>-->
-        <!-- </dependency>-->
-        <!-- <dependency>-->
-        <!-- <groupId>org.springframework</groupId>-->
-        <!-- <artifactId>spring-jdbc</artifactId>-->
-        <!-- <version>5.2.6.RELEASE</version>-->
-        <!-- </dependency>-->
+         <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-tx</artifactId>
+         <version>5.2.6.RELEASE</version>
+         </dependency>
+         <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-jdbc</artifactId>
+         <version>5.2.6.RELEASE</version>
+         </dependency>
         <!-- springmvc-->
 
         <dependency>

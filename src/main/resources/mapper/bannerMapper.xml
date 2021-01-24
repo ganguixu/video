@@ -62,6 +62,7 @@
     </select>
 
     <!-- 新增信息 -->
+    <!--默认是一个banner对象 所以不需要一个参数类型 == parameterType="banner"-->
     <insert id="addBanner">
         INSERT INTO banner (
             id, img_url, target_url, type, flag, create_time
@@ -118,25 +119,25 @@
     <!-- 批量修改信息 -->
     <update id="updateBanners" parameterType="list">
         <foreach collection="list" index="index" item="item" separator=";">
-            UPDATE banner
+            UPDATE banner b
             <set>
                 <if test="item.imgUrl != null">
-                    img_url = #{item.imgUrl},
+                    b.img_url = #{item.imgUrl},
                 </if>
                 <if test="item.targetUrl != null">
-                    target_url = #{item.targetUrl},
+                    b.target_url = #{item.targetUrl},
                 </if>
                 <if test="item.type != null">
-                    type = #{item.type},
+                    b.`type` = #{item.type},
                 </if>
                 <if test="item.flag != null">
-                    flag = #{item.flag},
+                    b.flag = #{item.flag},
                 </if>
                 <if test="item.createTime != null">
-                    create_time = #{item.createTime}
+                    b.create_time = #{item.createTime}
                 </if>
             </set>
-            WHERE id = #{item.id}
+            WHERE b.id = #{item.id}
         </foreach>
     </update>
 

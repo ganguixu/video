@@ -15,7 +15,7 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/*.xml"})
-public class DaoTest {
+public class UserDaoTest {
 
     @Autowired
     UserDao userDao;
@@ -72,8 +72,8 @@ public class DaoTest {
 //        int i = userDao.updateUsers(list);
 //        System.out.println(i);
 //    }
-//
-//
+
+
 //    @Test
 //    public void test3() {
 //

@@ -1,6 +1,5 @@
 package cn.ggx.util;
 
-import com.alibaba.druid.sql.visitor.functions.Lcase;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -8,13 +7,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 public class ExcelUtils {
 
+    /**
+     *
+     * @param titles Excel第一行列表抬头
+     * @param fields 属性
+     * @param dataList 明细数据 List<Map<属性,值>>
+     * @param suffix 后缀名
+     * @param fileName 文件名
+     * @throws IOException
+     */
     public static void createExcel(String[] titles, String[] fields, List<Map<String, String>> dataList, String suffix, String fileName) throws IOException {
         if (suffix == null || "xlsx".equals(suffix)) {
             createXlsxExcel(titles, fields, dataList, fileName);

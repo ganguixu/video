@@ -8,6 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -33,17 +35,8 @@ public class ExcelUtils {
             XSSFRow dataRow = sheet.createRow(i + 1);
             for (int j = 0; j < fields.length; j++) {
                 XSSFCell dataRowCell = dataRow.createCell(j);
-                Object obj = dataLists.get(i).get(fields[j]);
-                Class clazz = obj.getClass();
-                if (clazz == String.class) {
-                    dataRowCell.setCellValue((String) obj);
-                } else if (clazz == Integer.class || clazz == int.class) {
-                    dataRowCell.setCellValue((Integer) obj);
-                } else if (clazz == boolean.class) {
-                    dataRowCell.setCellValue((Boolean) obj);
-                } else {
-                    //抛一个异常
-                }
+                String value = dataLists.get(i).get(fields[j]);
+                dataRowCell.setCellValue(value);
             }
 
         }

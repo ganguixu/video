@@ -1,10 +1,12 @@
 package cn.ggx.dao;
 
-import cn.ggx.entity.ToolsTypeItem;
+import cn.ggx.entity.ToolsType;
 
 import java.util.List;
 
 public interface ToolsTypeItemDao {
 
-    List<ToolsTypeItem> findToolsTypeAll();
+    List<ToolsType> findToolsTypeAll();
+
+    List<ToolsType> findToolsTypeByIds(List<Integer> list);
 }
